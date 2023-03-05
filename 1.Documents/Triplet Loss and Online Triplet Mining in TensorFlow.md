@@ -52,7 +52,7 @@ Triplet loss in this case is a way to learn good embeddings for each face. In th
 
 ## Definition of the loss
 
->![在这里插入图片描述](https://img-blog.csdnimg.cn/0b4777dd8a2b4d518a37c3765eaafff5.jpeg#pic_center)
+>![在这里插入图片描述](./imgs/triplet_loss.png)
 > Triplet loss on two positive faces (Obama) and one negative face (Macron)
 > **As the reason for image censorship, I covered the faces with colour. If you want to check the original picture, go and open up the link of the original post here https://omoindrot.github.io/triplet-loss** 
 >
@@ -109,7 +109,7 @@ The figure below shows the three corresponding regions of the embedding space fo
 > 下图展示了负样本嵌入空间的三个对应区域
 
 
-> ![在这里插入图片描述](https://img-blog.csdnimg.cn/61524bace9114e9588a8ff87eeecb832.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQWtpIFVud3ppaQ==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+> ![在这里插入图片描述](./imgs/triplets.png)
 > The three types of negatives, given an anchor and a positive
 
 Choosing what kind of triplets we want to train on will greatly impact our metrics. In the original Facenet paper, they pick a random semi-hard negative for every pair of anchor and positive, and train on these triplets.
@@ -150,7 +150,7 @@ This technique gives you more triplets for a single batch of inputs, and doesn�
 
 > 这种技术为单批输入提供了更多的三元组，并且不需要任何离线挖掘。 因此，它的效率要高得多。 我们将在最后一部分看到它的实现。
 
-> ![在这里插入图片描述](https://img-blog.csdnimg.cn/06423a2000c044cf9ac9234a93590a18.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQWtpIFVud3ppaQ==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+> ![在这里插入图片描述](./imgs/online_triplet_loss.png)
 > Triplet loss with online mining: triplets are computed on the fly from a batch of embeddings
 
 ## Strategies in online mining
@@ -537,7 +537,7 @@ These embeddings were run with the hyperparameters specified in the configuratio
 > 这些嵌入是使用配置文件experiments/base_model/params.json 中指定的超参数运行的。 看看哪些评估图像被错误分类是非常有趣的：其中很多肯定也会被人类误判。
 
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/52be63efb0d04a8ca41e7edda3007b77.gif#pic_center)
+![在这里插入图片描述](./imgs/embeddings.gif)
 
 
 ## Conclusion
